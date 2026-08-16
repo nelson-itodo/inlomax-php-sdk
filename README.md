@@ -1,6 +1,6 @@
 # Inlomax PHP SDK
 
-The official PHP SDK for the [Inlomax API](https://inlomax.com/docs). This SDK makes it easy for developers to integrate Inlomax services like Airtime, Data, Electricity, and KYC verifications into their PHP applications.
+The official PHP SDK for the [Inlomax API](https://inlomax.com/docs). This SDK makes it easy for developers to integrate Inlomax services like Airtime, Data, Cable TV, Electricity, Education Pins, and KYC verifications into their PHP applications.
 
 ## Requirements
 
@@ -90,6 +90,69 @@ try {
         "request-id" => uniqid()
     ];
     $response = $inlomax->buyElectricity($payload);
+    print_r($response);
+} catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
+### Pay for Cable TV
+
+```php
+try {
+    $payload = [
+        "serviceID" => "2", // Check API docs for exact IDs
+        "smartCardNumber" => "1234567890", // Example field, check API docs
+        "request-id" => uniqid()
+    ];
+    $response = $inlomax->buyCable($payload);
+    print_r($response);
+} catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
+### Buy Education Pins
+
+```php
+try {
+    $payload = [
+        "serviceID" => "3", // Check API docs for exact IDs
+        "quantity" => 1, // Example field, check API docs
+        "request-id" => uniqid()
+    ];
+    $response = $inlomax->buyEducationPins($payload);
+    print_r($response);
+} catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
+### Verify Meter Number
+
+```php
+try {
+    $payload = [
+        "meterNumber" => "11111111111",
+        "disco" => "ikeja", // Example disco, check API docs
+        "meterType" => "prepaid"
+    ];
+    $response = $inlomax->verifyMeter($payload);
+    print_r($response);
+} catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
+### Verify Cable IUC
+
+```php
+try {
+    $payload = [
+        "smartCardNumber" => "1234567890",
+        "provider" => "dstv" // Example provider, check API docs
+    ];
+    $response = $inlomax->verifyIuc($payload);
     print_r($response);
 } catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
     echo "Error: " . $e->getMessage();
