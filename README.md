@@ -159,6 +159,72 @@ try {
 }
 ```
 
+### Get Services
+
+```php
+try {
+    $response = $inlomax->getServices();
+    print_r($response);
+} catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
+### Verify Bank Account
+
+```php
+try {
+    $payload = [
+        "accountNumber" => "0123456789",
+        "bankCode" => "033" // Check API docs for bank codes
+    ];
+    $response = $inlomax->verifyBankAccount($payload);
+    print_r($response);
+} catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
+### Verify BVN
+
+```php
+try {
+    $payload = [
+        "bvn" => "12345678901"
+    ];
+    $response = $inlomax->verifyBvn($payload);
+    print_r($response);
+} catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
+### Verify NIN
+
+```php
+try {
+    $payload = [
+        "nin" => "12345678901"
+    ];
+    $response = $inlomax->verifyNin($payload);
+    print_r($response);
+} catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
+### Get Transaction
+
+```php
+try {
+    $reference = "your_transaction_reference";
+    $response = $inlomax->getTransaction($reference);
+    print_r($response);
+} catch (\Inlomax\Inlomax\Exceptions\InlomaxException $e) {
+    echo "Error: " . $e->getMessage();
+}
+```
+
 ## Available Methods
 
 - `getBalance()`

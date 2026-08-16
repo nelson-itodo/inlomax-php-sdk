@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inlomax"
+version = "1.0.1"
+authors = [
+  { name="Inlomax", email="support@inlomax.com" },
+]
+description = "The official Python SDK for the Inlomax API"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "requests>=2.0.0",
+]
+keywords = ["inlomax", "api", "sdk", "vtu", "airtime", "data"]
+
+[project.urls]
+"Homepage" = "https://inlomax.com"
+"Documentation" = "https://inlomax.com/docs"

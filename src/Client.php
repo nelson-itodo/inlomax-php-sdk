@@ -43,6 +43,8 @@ class Client
             ],
             // We want to handle non-200 responses manually to parse JSON errors
             'http_errors' => false,
+            // Bypass local SSL verification for testing purposes
+            'verify' => false,
         ]);
     }
 
