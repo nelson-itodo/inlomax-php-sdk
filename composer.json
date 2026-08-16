@@ -1,0 +1,31 @@
+{
+    "name": "inlomax/inlomax-php",
+    "description": "The official PHP SDK for the Inlomax API",
+    "type": "library",
+    "keywords": [
+        "inlomax",
+        "api",
+        "sdk",
+        "vtu",
+        "airtime",
+        "data"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Inlomax",
+            "email": "support@inlomax.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Inlomax\\Inlomax\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
